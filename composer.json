@@ -1,0 +1,9 @@
+{
+    "name": "hawkca/craft-admin",
+    "description": "Admin modifications for CraftCMS.",
+    "type": "craft-module",
+    "require": {
+        "composer/installers": "~1.0",
+        "craftcms/cms": "^3.3"
+    }
+}

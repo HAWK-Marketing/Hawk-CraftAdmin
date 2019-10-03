@@ -1,0 +1,153 @@
+/* Login Form Styles */
+body, html {
+    background: #fff;
+    color:#4f4f4f!important;
+}
+
+body, input, select, textarea {
+    letter-spacing: 0.2px;
+    color:#4f4f4f!important;
+}
+
+body.login.ltr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    background-size: cover;
+    background-image: url(../images/bg.jpg);
+}
+
+#global-sidebar {
+    box-shadow: none;
+}
+
+#app-info {
+    display: none;
+}
+
+#global-sidebar #devmode {
+    display: none;
+}
+
+.btn.submit {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3BB2DF), to(#13a2db));
+    background-image: linear-gradient(#3BB2DF, #13a2db);
+    color: #fff!important;
+}
+
+.btn.submit:not(.disabled):not(.inactive):hover, .btn.submit:not(.disabled):not(.inactive).hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3BB2DF), to(#13a2db));
+    background-image: linear-gradient(#3BB2DF, #13a2db);
+}
+
+.btn.submit:not(.disabled):not(.inactive):active, .btn.submit:not(.disabled):not(.inactive).active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0498D1), to(#0498D1));
+    background-image: linear-gradient(#0498D1, #0498D1);
+}
+
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+    background-color: #fff !important;
+    color: #4f4f4f!important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    background-color: #fff !important;
+    color: #4f4f4f!important;
+}
+
+form#login-form {
+    border-radius: 10px;
+    padding: 180px 100px 30px;
+    background-color: #fff;
+    position: initial;
+    margin: 50px 0 0;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: 50% 12%;
+    box-shadow: 3px 3px 15px #000;
+}
+
+a {
+    color: #13a2db;
+}
+
+#poweredby {
+    display: none!important;
+}
+
+#login-form h1 {
+    color: #4f4f4f!important;
+}
+
+#loginName {
+    margin-bottom: 10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Control Panel Styles */
+#main-container #crumbs.empty + #main #header {
+    background-color: #fff;
+}
+
+#global-sidebar #nav li:not(.has-subnav) > a.sel {
+    background: #13a2db;
+}
+
+#global-sidebar #system-info #site-icon img, #global-sidebar #system-info #site-icon svg {
+    display: none;
+}
+
+div#site-icon {
+    background-image: url(../images/logo.svg);
+}
+
+.secondary-buttons .btn.submit {
+    background-image: none;
+    color: #13a2db!important;
+    border: 1px solid #13a2db;
+}
+
+.secondary-buttons .btn.submit:not(.disabled):not(.inactive):hover,
+.secondary-buttons .btn.submit:not(.disabled):not(.inactive).hover{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3BB2DF), to(#13a2db));
+    background-image: linear-gradient(#3BB2DF, #13a2db);
+    color: #fff!important;
+}
+
+#main-container #main #header h1 {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    form#login-form {
+        background-size: 70px;
+        background-position: 50% 18%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    form#login-form {
+        margin: 0 20px;
+        background-position: 50% 12%;
+        padding: 150px 30px 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #login-fields {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+}

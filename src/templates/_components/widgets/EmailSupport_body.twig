@@ -1,0 +1,31 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Communicator plugin for Craft CMS
+ *
+ * EmailSupport Widget Body
+ *
+ * @author    Will Browar
+ * @copyright Copyright (c) 2018 Will Browar
+ * @link      https://wbrowar.com
+ * @package   Communicator
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+<div id="communicator__email_support__widget">
+    <p>Send a message to HAWK support if you're experiencing an error. Please consult your training manual to ensure the problem is not mentioned there before emailing us.</p>
+
+    <form method="post">
+        {{ forms.textareaField({
+            label: 'Message',
+            id: 'message',
+            name: 'message',
+            class: 'nicetext',
+        }) }}
+
+        <button class="btn submit" type="submit">Send</button>
+    </form>
+</div>

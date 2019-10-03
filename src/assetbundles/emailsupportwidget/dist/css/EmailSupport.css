@@ -1,0 +1,15 @@
+/**
+ * HAWK module for Craft CMS
+ *
+ * EmailSupport Widget CSS
+ *
+ * @author    HAWK
+ * @copyright Copyright (c) 2019 HAWK
+ * @link      http://hawk.ca
+ * @package   HAWKModule
+ * @since     1.0.0
+ */
+#communicator__email_support__widget p {
+    font-size: 12px;
+    line-height: 1.2;
+}
