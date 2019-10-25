@@ -87,21 +87,6 @@ class HAWKModule extends Module
             }
         });
 
-        if (Craft::$app->getRequest()->getIsCpRequest()) {
-            // Load CSS before template is rendered
-            Event::on(
-                View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE,
-                function (TemplateEvent $event) {
-                    // Get view
-                    $view = Craft::$app->getView();
-
-                    // Load CSS file
-                    $view->registerAssetBundle(HawkDashboardAsset::class);
-                }
-            );
-        }
-
         // Set this as the global instance of this module class
         static::setInstance($this);
 
