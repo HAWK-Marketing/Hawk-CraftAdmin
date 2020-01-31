@@ -12,6 +12,7 @@ namespace modules\hawk;
 
 use craft\helpers\UrlHelper;
 use modules\hawk\assetbundles\hawkdashboard\HawkDashboardAsset;
+use modules\hawk\assetbundles\emailsupportwidget\EmailSupportWidgetAsset;
 use modules\hawk\widgets\EmailSupport as EmailSupportWidget;
 
 use Craft;
@@ -106,21 +107,6 @@ class HAWKModule extends Module
             }
         });
 
-        if (Craft::$app->getRequest()->getIsCpRequest()) {
-            // Load CSS before template is rendered
-            Event::on(
-                View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE,
-                function (TemplateEvent $event) {
-                    // Get view
-                    $view = Craft::$app->getView();
-
-                    // Load CSS file
-                    $view->registerAssetBundle(HawkDashboardAsset::class);
-                }
-            );
-        }
-
         // Set this as the global instance of this module class
         static::setInstance($this);
 
@@ -150,7 +136,22 @@ class HAWKModule extends Module
                 View::EVENT_BEFORE_RENDER_TEMPLATE,
                 function (TemplateEvent $event) {
                     try {
-                        Craft::$app->getView()->registerAssetBundle(HAWKModuleAsset::class);
+                        Craft::$app->getView()->registerAssetBundle(HawkDashboardAsset::class);
+                    } catch (InvalidConfigException $e) {
+                        Craft::error(
+                            'Error registering AssetBundle - '.$e->getMessage(),
+                            __METHOD__
+                        );
+                    }
+                }
+            );
+            
+            Event::on(
+                View::class,
+                View::EVENT_BEFORE_RENDER_TEMPLATE,
+                function (TemplateEvent $event) {
+                    try {
+                        Craft::$app->getView()->registerAssetBundle(EmailSupportWidgetAsset::class);
                     } catch (InvalidConfigException $e) {
                         Craft::error(
                             'Error registering AssetBundle - '.$e->getMessage(),
