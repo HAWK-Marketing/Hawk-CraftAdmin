@@ -10,6 +10,7 @@
 
 namespace modules\hawk;
 
+use craft\helpers\UrlHelper;
 use modules\hawk\assetbundles\hawkdashboard\HawkDashboardAsset;
 use modules\hawk\widgets\EmailSupport as EmailSupportWidget;
 
@@ -84,6 +85,24 @@ class HAWKModule extends Module
         Event::on(View::class, View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function (RegisterTemplateRootsEvent $e) {
             if (is_dir($baseDir = $this->getBasePath().DIRECTORY_SEPARATOR.'templates')) {
                 $e->roots[$this->id] = $baseDir;
+            }
+        });
+
+        // Show the admin bar on the frontend
+        Craft::$app->view->hook('hawk-admin-bar', function(array &$context) {
+            if (!empty($context['entry']) && $context['entry']->isEditable) {
+                $oldMode = \Craft::$app->view->getTemplateMode();
+                Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);
+
+                $html = \Craft::$app->view->renderTemplate('hawk/_adminbar', [
+                    'entry' => $context['entry'],
+                    'logoutUrl' => $context['logoutUrl'],
+                    'dashboardUrl' => UrlHelper::cpUrl()
+                ]);
+
+                Craft::$app->view->setTemplateMode($oldMode);
+
+                return $html;
             }
         });
 

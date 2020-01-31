@@ -1,0 +1,91 @@
+<div class="hawk-admin-bar">
+    <a href="{{ entry.cpEditUrl }}">
+        Edit this page
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+    </a>
+    <a href="{{ dashboardUrl }}">
+        Dashboard
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </a>
+    <a href="{{ logoutUrl }}">
+        Logout
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+    </a>
+    <a href="#" class="hawk-admin-bar--hide">
+        Hide Toolbar
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+    </a>
+    <a href="#" class="hawk-admin-bar--show">
+        Show Toolbar
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+    </a>
+</div>
+<style>
+    .hawk-admin-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+    }
+
+    .hawk-admin-bar a {
+        font-family: Helvetica, sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+        background: #13a2db;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px 15px;
+        font-weight: 700;
+        display: flex;
+        text-shadow: 0 0 2px rgba(0,0,0,0.5);
+        letter-spacing: 1px;
+        align-items: center;
+        border-left: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .hawk-admin-bar:first-child {
+        border-left: none;
+    }
+
+    .hawk-admin-bar a svg {
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+    }
+
+    .hawk-admin-bar a.hawk-admin-bar--show {
+        display: none;
+    }
+
+    .hawk-admin-bar.hawk-admin-bar-hide a {
+        display: none;
+    }
+
+    .hawk-admin-bar.hawk-admin-bar-hide a.hawk-admin-bar--show {
+        display: flex;
+    }
+</style>
+<script>
+    if (localStorage) {
+        if (localStorage.getItem('icp-hawk-admin') === '0') {
+            document.querySelector('.hawk-admin-bar').classList.add('hawk-admin-bar-hide');
+        }
+
+        document.querySelector('.hawk-admin-bar--hide').onclick = function (e) {
+            e.preventDefault();
+
+            localStorage.setItem('icp-hawk-admin', '0');
+            document.querySelector('.hawk-admin-bar').classList.add('hawk-admin-bar-hide');
+        };
+
+        document.querySelector('.hawk-admin-bar--show').onclick = function (e) {
+            e.preventDefault();
+
+            localStorage.removeItem('icp-hawk-admin');
+            document.querySelector('.hawk-admin-bar').classList.remove('hawk-admin-bar-hide');
+        };
+    }
+</script>
